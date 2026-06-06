@@ -41,13 +41,13 @@ See [metadata/statistics.json](metadata/statistics.json) for detailed counts, [m
 
 ## Data Preview
 
-Paired infrared and visible/RGB examples:
+Infrared cutout primitives:
+
+![Infrared cutout primitive examples](samples/preview/ir_cutout_grid.png)
+
+Paired infrared and visible/RGB cutouts:
 
 ![Paired infrared and visible examples](samples/preview/paired_examples.png)
-
-Random sample grid:
-
-![Preview grid](samples/preview/preview_grid.png)
 
 ## Repository Layout
 
@@ -67,6 +67,8 @@ metadata/
   statistics.json
 samples/
   preview/
+    ir_cutout_grid.png
+    object_grid.png
     paired_examples.png
     preview_grid.png
 scripts/

@@ -16,10 +16,12 @@ def make_grid(paths: list[Path], output: Path, tile_size: int, columns: int) -> 
 
     for index, path in enumerate(paths):
         with Image.open(path) as image:
-            tile = ImageOps.contain(image.convert("RGB"), (tile_size, tile_size))
+            tile = ImageOps.contain(image.convert("RGBA"), (tile_size, tile_size))
+        canvas = Image.new("RGBA", (tile_size, tile_size), (255, 255, 255, 255))
         x = (index % columns) * tile_size + (tile_size - tile.width) // 2
         y = (index // columns) * tile_size + (tile_size - tile.height) // 2
-        grid.paste(tile, (x, y))
+        canvas.alpha_composite(tile, ((tile_size - tile.width) // 2, (tile_size - tile.height) // 2))
+        grid.paste(canvas.convert("RGB"), ((index % columns) * tile_size, (index // columns) * tile_size))
 
     output.parent.mkdir(parents=True, exist_ok=True)
     grid.save(output)
@@ -33,9 +35,30 @@ def main() -> None:
     parser.add_argument("--tile-size", type=int, default=128)
     parser.add_argument("--columns", type=int, default=6)
     parser.add_argument("--seed", type=int, default=7)
+    parser.add_argument(
+        "--object-only",
+        action="store_true",
+        help="Use only extracted person/vehicle primitive directories.",
+    )
+    parser.add_argument(
+        "--ir-only",
+        action="store_true",
+        help="Use only infrared extracted primitive directories.",
+    )
     args = parser.parse_args()
 
-    images = sorted(args.dataset_root.rglob("*.png"))
+    if args.ir_only:
+        images = []
+        for pattern in ("person/ir/*.png", "vehicle/ir/*.png"):
+            images.extend(args.dataset_root.rglob(pattern))
+        images = sorted(images)
+    elif args.object_only:
+        images = []
+        for pattern in ("person/ir/*.png", "person/rgb/*.png", "vehicle/ir/*.png", "vehicle/rgb/*.png"):
+            images.extend(args.dataset_root.rglob(pattern))
+        images = sorted(images)
+    else:
+        images = sorted(args.dataset_root.rglob("*.png"))
     if not images:
         raise SystemExit(f"No PNG images found under {args.dataset_root}")
 
