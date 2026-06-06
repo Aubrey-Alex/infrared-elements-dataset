@@ -1,0 +1,14 @@
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+data/
+dataset/
+图元/
+__pycache__/
+.pytest_cache/
+.DS_Store
+Thumbs.db

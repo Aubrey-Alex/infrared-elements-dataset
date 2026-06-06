@@ -1,0 +1,71 @@
+{
+  "source_root": "Primitive",
+  "image_format": "PNG",
+  "total_images": 30552,
+  "total_bytes": 766402442,
+  "total_mib": 730.9,
+  "subsets": {
+    "202304131130_test01_filtered": 910,
+    "202304131130_test02_filtered": 7588,
+    "202304131130_test03_filtered": 1254,
+    "202304131130_test04_filtered": 302,
+    "202304131130_test05_filtered": 1254,
+    "filtered_dataset_20210418_test01": 1208,
+    "filtered_dataset_20210418_test02": 126,
+    "filtered_dataset_202304131400": 846,
+    "filtered_dataset_202304141211_test01": 6394,
+    "filtered_dataset_202304141211_test02": 10670
+  },
+  "modalities": {
+    "infrared": 5654,
+    "ir": 9622,
+    "rgb": 9622,
+    "visual": 5654
+  },
+  "categories": {
+    "person": 17600,
+    "vehicle": 1644
+  },
+  "subset_modalities": {
+    "202304131130_test01_filtered": {
+      "infrared": 455,
+      "visual": 455
+    },
+    "202304131130_test02_filtered": {
+      "infrared": 3794,
+      "visual": 3794
+    },
+    "202304131130_test03_filtered": {
+      "infrared": 627,
+      "visual": 627
+    },
+    "202304131130_test04_filtered": {
+      "infrared": 151,
+      "visual": 151
+    },
+    "202304131130_test05_filtered": {
+      "infrared": 627,
+      "visual": 627
+    },
+    "filtered_dataset_20210418_test01": {
+      "ir": 604,
+      "rgb": 604
+    },
+    "filtered_dataset_20210418_test02": {
+      "ir": 63,
+      "rgb": 63
+    },
+    "filtered_dataset_202304131400": {
+      "ir": 423,
+      "rgb": 423
+    },
+    "filtered_dataset_202304141211_test01": {
+      "ir": 3197,
+      "rgb": 3197
+    },
+    "filtered_dataset_202304141211_test02": {
+      "ir": 5335,
+      "rgb": 5335
+    }
+  }
+}

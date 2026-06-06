@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using this metadata."
+title: "Infrared Elements Dataset"
+version: "1.0.0"
+date-released: "2026-06-06"
+repository-code: "https://github.com/Aubrey-Alex/infrared-elements-dataset"
+authors:
+  - family-names: "Aubrey-Alex"
+license: "LicenseRef-Research-NonCommercial"
