@@ -1,5 +1,11 @@
 # Preview Samples
 
+`paired_examples.png` shows paired infrared and visible/RGB examples generated with:
+
+```bash
+python scripts/preview_pairs.py ../Primitive --output samples/preview/paired_examples.png
+```
+
 `preview_grid.png` is a deterministic sample grid generated from the full dataset with:
 
 ```bash

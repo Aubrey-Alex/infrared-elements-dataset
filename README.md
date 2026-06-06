@@ -39,6 +39,16 @@ python scripts/verify_checksum.py data/infrared-elements-v1.0.0.zip
 
 See [metadata/statistics.json](metadata/statistics.json) for detailed counts, [metadata/manifest.csv](metadata/manifest.csv) for per-file metadata, and [metadata/file_checksums.sha256](metadata/file_checksums.sha256) for per-image checksums.
 
+## Data Preview
+
+Paired infrared and visible/RGB examples:
+
+![Paired infrared and visible examples](samples/preview/paired_examples.png)
+
+Random sample grid:
+
+![Preview grid](samples/preview/preview_grid.png)
+
 ## Repository Layout
 
 ```text
@@ -57,10 +67,12 @@ metadata/
   statistics.json
 samples/
   preview/
+    paired_examples.png
     preview_grid.png
 scripts/
   build_metadata.py
   download_dataset.py
+  preview_pairs.py
   verify_checksum.py
   preview_grid.py
 ```
